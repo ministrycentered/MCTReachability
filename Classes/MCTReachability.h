@@ -11,12 +11,11 @@
 
 @import Foundation;
 @import SystemConfiguration;
-
-#import <netinet/in.h>
+@import Darwin.POSIX.netinet.in;
 
 // Turn on debug logging
 #ifndef MCTReachabilityDebugLog
-#   define MCTReachabilityDebugLog 1
+#   define MCTReachabilityDebugLog 0
 #endif
 
 @class MCTReachability;

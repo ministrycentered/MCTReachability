@@ -193,6 +193,9 @@ static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkRea
 static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const char *comment) {
     MCTReachabilityLog(@"Flags: %@ %s", MCTReachabilityFlagsString(flags), comment);
 }
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-function"
 static NSString *MCTReachabilityFlagsString(SCNetworkReachabilityFlags flags) {
 #if	TARGET_OS_IPHONE
     char wwan = (flags & kSCNetworkReachabilityFlagsIsWWAN)				  ? 'W' : '-';
@@ -209,3 +212,4 @@ static NSString *MCTReachabilityFlagsString(SCNetworkReachabilityFlags flags) {
     char dire = (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-';
     return [NSString stringWithFormat:@"%c%c %c%c%c%c%c%c%c",wwan,tran,reac,requ,traf,inte,dema,loca,dire];
 }
+#pragma clang diagnostic pop

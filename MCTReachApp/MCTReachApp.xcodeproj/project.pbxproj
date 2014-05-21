@@ -638,6 +638,10 @@
 				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachApp/MCTReachApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wunused-function",
+					"-Wall",
+				);
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -651,6 +655,10 @@
 				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachApp/MCTReachApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wunused-function",
+					"-Wall",
+				);
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

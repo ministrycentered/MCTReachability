@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ministry Centered Technology. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 #import "MCTAppDelegate.h"
 
