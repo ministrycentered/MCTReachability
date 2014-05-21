@@ -1,0 +1,837 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		941B95D5192D2C6F00636EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95D4192D2C6F00636EA5 /* Foundation.framework */; };
+		941B95D7192D2C6F00636EA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95D6192D2C6F00636EA5 /* CoreGraphics.framework */; };
+		941B95D9192D2C6F00636EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95D8192D2C6F00636EA5 /* UIKit.framework */; };
+		941B95DF192D2C6F00636EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 941B95DD192D2C6F00636EA5 /* InfoPlist.strings */; };
+		941B95E1192D2C6F00636EA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B95E0192D2C6F00636EA5 /* main.m */; };
+		941B95E5192D2C6F00636EA5 /* MCTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B95E4192D2C6F00636EA5 /* MCTAppDelegate.m */; };
+		941B95E8192D2C6F00636EA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941B95E6192D2C6F00636EA5 /* Main.storyboard */; };
+		941B95EB192D2C6F00636EA5 /* MCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B95EA192D2C6F00636EA5 /* MCTViewController.m */; };
+		941B95ED192D2C6F00636EA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941B95EC192D2C6F00636EA5 /* Images.xcassets */; };
+		941B95F4192D2C6F00636EA5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95F3192D2C6F00636EA5 /* XCTest.framework */; };
+		941B95F5192D2C6F00636EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95D4192D2C6F00636EA5 /* Foundation.framework */; };
+		941B95F6192D2C6F00636EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95D8192D2C6F00636EA5 /* UIKit.framework */; };
+		941B95FE192D2C6F00636EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 941B95FC192D2C6F00636EA5 /* InfoPlist.strings */; };
+		941B9600192D2C6F00636EA5 /* MCTReachAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B95FF192D2C6F00636EA5 /* MCTReachAppTests.m */; };
+		941B9612192D2C9400636EA5 /* MCTReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B9611192D2C9400636EA5 /* MCTReachability.m */; };
+		941B9619192D4F0D00636EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B9618192D4F0D00636EA5 /* Cocoa.framework */; };
+		941B9623192D4F0D00636EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 941B9621192D4F0D00636EA5 /* InfoPlist.strings */; };
+		941B9625192D4F0D00636EA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B9624192D4F0D00636EA5 /* main.m */; };
+		941B9629192D4F0D00636EA5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 941B9627192D4F0D00636EA5 /* Credits.rtf */; };
+		941B962C192D4F0D00636EA5 /* MCTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B962B192D4F0D00636EA5 /* MCTAppDelegate.m */; };
+		941B962F192D4F0D00636EA5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941B962D192D4F0D00636EA5 /* MainMenu.xib */; };
+		941B9631192D4F0D00636EA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941B9630192D4F0D00636EA5 /* Images.xcassets */; };
+		941B9637192D4F0D00636EA5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B95F3192D2C6F00636EA5 /* XCTest.framework */; };
+		941B9638192D4F0D00636EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B9618192D4F0D00636EA5 /* Cocoa.framework */; };
+		941B9640192D4F0D00636EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 941B963E192D4F0D00636EA5 /* InfoPlist.strings */; };
+		941B9642192D4F0D00636EA5 /* MCTReachMacAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B9641192D4F0D00636EA5 /* MCTReachMacAppTests.m */; };
+		941B9649192D4F5100636EA5 /* MCTReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B9611192D2C9400636EA5 /* MCTReachability.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		941B95F7192D2C6F00636EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 941B95C9192D2C6F00636EA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 941B95D0192D2C6F00636EA5;
+			remoteInfo = MCTReachApp;
+		};
+		941B9639192D4F0D00636EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 941B95C9192D2C6F00636EA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 941B9616192D4F0D00636EA5;
+			remoteInfo = MCTReachMacApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		941B95D1192D2C6F00636EA5 /* MCTReachApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCTReachApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		941B95D4192D2C6F00636EA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		941B95D6192D2C6F00636EA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		941B95D8192D2C6F00636EA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		941B95DC192D2C6F00636EA5 /* MCTReachApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTReachApp-Info.plist"; sourceTree = "<group>"; };
+		941B95DE192D2C6F00636EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		941B95E0192D2C6F00636EA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		941B95E2192D2C6F00636EA5 /* MCTReachApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MCTReachApp-Prefix.pch"; sourceTree = "<group>"; };
+		941B95E3192D2C6F00636EA5 /* MCTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTAppDelegate.h; sourceTree = "<group>"; };
+		941B95E4192D2C6F00636EA5 /* MCTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTAppDelegate.m; sourceTree = "<group>"; };
+		941B95E7192D2C6F00636EA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		941B95E9192D2C6F00636EA5 /* MCTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTViewController.h; sourceTree = "<group>"; };
+		941B95EA192D2C6F00636EA5 /* MCTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTViewController.m; sourceTree = "<group>"; };
+		941B95EC192D2C6F00636EA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		941B95F2192D2C6F00636EA5 /* MCTReachAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCTReachAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		941B95F3192D2C6F00636EA5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		941B95FB192D2C6F00636EA5 /* MCTReachAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTReachAppTests-Info.plist"; sourceTree = "<group>"; };
+		941B95FD192D2C6F00636EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		941B95FF192D2C6F00636EA5 /* MCTReachAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTReachAppTests.m; sourceTree = "<group>"; };
+		941B9610192D2C9400636EA5 /* MCTReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTReachability.h; sourceTree = "<group>"; };
+		941B9611192D2C9400636EA5 /* MCTReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTReachability.m; sourceTree = "<group>"; };
+		941B9617192D4F0D00636EA5 /* MCTReachMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCTReachMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		941B9618192D4F0D00636EA5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		941B961B192D4F0D00636EA5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		941B961C192D4F0D00636EA5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		941B961D192D4F0D00636EA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		941B9620192D4F0D00636EA5 /* MCTReachMacApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTReachMacApp-Info.plist"; sourceTree = "<group>"; };
+		941B9622192D4F0D00636EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		941B9624192D4F0D00636EA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		941B9626192D4F0D00636EA5 /* MCTReachMacApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MCTReachMacApp-Prefix.pch"; sourceTree = "<group>"; };
+		941B9628192D4F0D00636EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		941B962A192D4F0D00636EA5 /* MCTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTAppDelegate.h; sourceTree = "<group>"; };
+		941B962B192D4F0D00636EA5 /* MCTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTAppDelegate.m; sourceTree = "<group>"; };
+		941B962E192D4F0D00636EA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		941B9630192D4F0D00636EA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		941B9636192D4F0D00636EA5 /* MCTReachMacAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCTReachMacAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		941B963D192D4F0D00636EA5 /* MCTReachMacAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTReachMacAppTests-Info.plist"; sourceTree = "<group>"; };
+		941B963F192D4F0D00636EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		941B9641192D4F0D00636EA5 /* MCTReachMacAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTReachMacAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		941B95CE192D2C6F00636EA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B95D7192D2C6F00636EA5 /* CoreGraphics.framework in Frameworks */,
+				941B95D9192D2C6F00636EA5 /* UIKit.framework in Frameworks */,
+				941B95D5192D2C6F00636EA5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B95EF192D2C6F00636EA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B95F4192D2C6F00636EA5 /* XCTest.framework in Frameworks */,
+				941B95F6192D2C6F00636EA5 /* UIKit.framework in Frameworks */,
+				941B95F5192D2C6F00636EA5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B9614192D4F0D00636EA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9619192D4F0D00636EA5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B9633192D4F0D00636EA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9638192D4F0D00636EA5 /* Cocoa.framework in Frameworks */,
+				941B9637192D4F0D00636EA5 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		941B95C8192D2C6F00636EA5 = {
+			isa = PBXGroup;
+			children = (
+				941B95DA192D2C6F00636EA5 /* MCTReachApp */,
+				941B95F9192D2C6F00636EA5 /* MCTReachAppTests */,
+				941B961E192D4F0D00636EA5 /* MCTReachMacApp */,
+				941B963B192D4F0D00636EA5 /* MCTReachMacAppTests */,
+				941B95D3192D2C6F00636EA5 /* Frameworks */,
+				941B95D2192D2C6F00636EA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		941B95D2192D2C6F00636EA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				941B95D1192D2C6F00636EA5 /* MCTReachApp.app */,
+				941B95F2192D2C6F00636EA5 /* MCTReachAppTests.xctest */,
+				941B9617192D4F0D00636EA5 /* MCTReachMacApp.app */,
+				941B9636192D4F0D00636EA5 /* MCTReachMacAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		941B95D3192D2C6F00636EA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				941B95D4192D2C6F00636EA5 /* Foundation.framework */,
+				941B95D6192D2C6F00636EA5 /* CoreGraphics.framework */,
+				941B95D8192D2C6F00636EA5 /* UIKit.framework */,
+				941B95F3192D2C6F00636EA5 /* XCTest.framework */,
+				941B9618192D4F0D00636EA5 /* Cocoa.framework */,
+				941B961A192D4F0D00636EA5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		941B95DA192D2C6F00636EA5 /* MCTReachApp */ = {
+			isa = PBXGroup;
+			children = (
+				941B9609192D2C8200636EA5 /* Classes */,
+				941B95E3192D2C6F00636EA5 /* MCTAppDelegate.h */,
+				941B95E4192D2C6F00636EA5 /* MCTAppDelegate.m */,
+				941B95E6192D2C6F00636EA5 /* Main.storyboard */,
+				941B95E9192D2C6F00636EA5 /* MCTViewController.h */,
+				941B95EA192D2C6F00636EA5 /* MCTViewController.m */,
+				941B95EC192D2C6F00636EA5 /* Images.xcassets */,
+				941B95DB192D2C6F00636EA5 /* Supporting Files */,
+			);
+			path = MCTReachApp;
+			sourceTree = "<group>";
+		};
+		941B95DB192D2C6F00636EA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				941B95DC192D2C6F00636EA5 /* MCTReachApp-Info.plist */,
+				941B95DD192D2C6F00636EA5 /* InfoPlist.strings */,
+				941B95E0192D2C6F00636EA5 /* main.m */,
+				941B95E2192D2C6F00636EA5 /* MCTReachApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		941B95F9192D2C6F00636EA5 /* MCTReachAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				941B95FF192D2C6F00636EA5 /* MCTReachAppTests.m */,
+				941B95FA192D2C6F00636EA5 /* Supporting Files */,
+			);
+			path = MCTReachAppTests;
+			sourceTree = "<group>";
+		};
+		941B95FA192D2C6F00636EA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				941B95FB192D2C6F00636EA5 /* MCTReachAppTests-Info.plist */,
+				941B95FC192D2C6F00636EA5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		941B9609192D2C8200636EA5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				941B9610192D2C9400636EA5 /* MCTReachability.h */,
+				941B9611192D2C9400636EA5 /* MCTReachability.m */,
+				941B960A192D2C8200636EA5 /* ios */,
+				941B960C192D2C8200636EA5 /* osx */,
+			);
+			name = Classes;
+			path = ../../Classes;
+			sourceTree = "<group>";
+		};
+		941B960A192D2C8200636EA5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		941B960C192D2C8200636EA5 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		941B961A192D4F0D00636EA5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				941B961B192D4F0D00636EA5 /* AppKit.framework */,
+				941B961C192D4F0D00636EA5 /* CoreData.framework */,
+				941B961D192D4F0D00636EA5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		941B961E192D4F0D00636EA5 /* MCTReachMacApp */ = {
+			isa = PBXGroup;
+			children = (
+				941B962A192D4F0D00636EA5 /* MCTAppDelegate.h */,
+				941B962B192D4F0D00636EA5 /* MCTAppDelegate.m */,
+				941B962D192D4F0D00636EA5 /* MainMenu.xib */,
+				941B9630192D4F0D00636EA5 /* Images.xcassets */,
+				941B961F192D4F0D00636EA5 /* Supporting Files */,
+			);
+			path = MCTReachMacApp;
+			sourceTree = "<group>";
+		};
+		941B961F192D4F0D00636EA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				941B9620192D4F0D00636EA5 /* MCTReachMacApp-Info.plist */,
+				941B9621192D4F0D00636EA5 /* InfoPlist.strings */,
+				941B9624192D4F0D00636EA5 /* main.m */,
+				941B9626192D4F0D00636EA5 /* MCTReachMacApp-Prefix.pch */,
+				941B9627192D4F0D00636EA5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		941B963B192D4F0D00636EA5 /* MCTReachMacAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				941B9641192D4F0D00636EA5 /* MCTReachMacAppTests.m */,
+				941B963C192D4F0D00636EA5 /* Supporting Files */,
+			);
+			path = MCTReachMacAppTests;
+			sourceTree = "<group>";
+		};
+		941B963C192D4F0D00636EA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				941B963D192D4F0D00636EA5 /* MCTReachMacAppTests-Info.plist */,
+				941B963E192D4F0D00636EA5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		941B95D0192D2C6F00636EA5 /* MCTReachApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 941B9603192D2C6F00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachApp" */;
+			buildPhases = (
+				941B95CD192D2C6F00636EA5 /* Sources */,
+				941B95CE192D2C6F00636EA5 /* Frameworks */,
+				941B95CF192D2C6F00636EA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCTReachApp;
+			productName = MCTReachApp;
+			productReference = 941B95D1192D2C6F00636EA5 /* MCTReachApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		941B95F1192D2C6F00636EA5 /* MCTReachAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 941B9606192D2C6F00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachAppTests" */;
+			buildPhases = (
+				941B95EE192D2C6F00636EA5 /* Sources */,
+				941B95EF192D2C6F00636EA5 /* Frameworks */,
+				941B95F0192D2C6F00636EA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				941B95F8192D2C6F00636EA5 /* PBXTargetDependency */,
+			);
+			name = MCTReachAppTests;
+			productName = MCTReachAppTests;
+			productReference = 941B95F2192D2C6F00636EA5 /* MCTReachAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		941B9616192D4F0D00636EA5 /* MCTReachMacApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 941B9643192D4F0E00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachMacApp" */;
+			buildPhases = (
+				941B9613192D4F0D00636EA5 /* Sources */,
+				941B9614192D4F0D00636EA5 /* Frameworks */,
+				941B9615192D4F0D00636EA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCTReachMacApp;
+			productName = MCTReachMacApp;
+			productReference = 941B9617192D4F0D00636EA5 /* MCTReachMacApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		941B9635192D4F0D00636EA5 /* MCTReachMacAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 941B9646192D4F0E00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachMacAppTests" */;
+			buildPhases = (
+				941B9632192D4F0D00636EA5 /* Sources */,
+				941B9633192D4F0D00636EA5 /* Frameworks */,
+				941B9634192D4F0D00636EA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				941B963A192D4F0D00636EA5 /* PBXTargetDependency */,
+			);
+			name = MCTReachMacAppTests;
+			productName = MCTReachMacAppTests;
+			productReference = 941B9636192D4F0D00636EA5 /* MCTReachMacAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		941B95C9192D2C6F00636EA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MCT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ministry Centered Technology";
+				TargetAttributes = {
+					941B95F1192D2C6F00636EA5 = {
+						TestTargetID = 941B95D0192D2C6F00636EA5;
+					};
+					941B9635192D4F0D00636EA5 = {
+						TestTargetID = 941B95D0192D2C6F00636EA5;
+					};
+				};
+			};
+			buildConfigurationList = 941B95CC192D2C6F00636EA5 /* Build configuration list for PBXProject "MCTReachApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 941B95C8192D2C6F00636EA5;
+			productRefGroup = 941B95D2192D2C6F00636EA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				941B95D0192D2C6F00636EA5 /* MCTReachApp */,
+				941B95F1192D2C6F00636EA5 /* MCTReachAppTests */,
+				941B9616192D4F0D00636EA5 /* MCTReachMacApp */,
+				941B9635192D4F0D00636EA5 /* MCTReachMacAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		941B95CF192D2C6F00636EA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B95ED192D2C6F00636EA5 /* Images.xcassets in Resources */,
+				941B95DF192D2C6F00636EA5 /* InfoPlist.strings in Resources */,
+				941B95E8192D2C6F00636EA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B95F0192D2C6F00636EA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B95FE192D2C6F00636EA5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B9615192D4F0D00636EA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9623192D4F0D00636EA5 /* InfoPlist.strings in Resources */,
+				941B9631192D4F0D00636EA5 /* Images.xcassets in Resources */,
+				941B9629192D4F0D00636EA5 /* Credits.rtf in Resources */,
+				941B962F192D4F0D00636EA5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B9634192D4F0D00636EA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9640192D4F0D00636EA5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		941B95CD192D2C6F00636EA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B95E1192D2C6F00636EA5 /* main.m in Sources */,
+				941B9612192D2C9400636EA5 /* MCTReachability.m in Sources */,
+				941B95EB192D2C6F00636EA5 /* MCTViewController.m in Sources */,
+				941B95E5192D2C6F00636EA5 /* MCTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B95EE192D2C6F00636EA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9600192D2C6F00636EA5 /* MCTReachAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B9613192D4F0D00636EA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9649192D4F5100636EA5 /* MCTReachability.m in Sources */,
+				941B9625192D4F0D00636EA5 /* main.m in Sources */,
+				941B962C192D4F0D00636EA5 /* MCTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941B9632192D4F0D00636EA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941B9642192D4F0D00636EA5 /* MCTReachMacAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		941B95F8192D2C6F00636EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 941B95D0192D2C6F00636EA5 /* MCTReachApp */;
+			targetProxy = 941B95F7192D2C6F00636EA5 /* PBXContainerItemProxy */;
+		};
+		941B963A192D4F0D00636EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 941B9616192D4F0D00636EA5 /* MCTReachMacApp */;
+			targetProxy = 941B9639192D4F0D00636EA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		941B95DD192D2C6F00636EA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B95DE192D2C6F00636EA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		941B95E6192D2C6F00636EA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B95E7192D2C6F00636EA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		941B95FC192D2C6F00636EA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B95FD192D2C6F00636EA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		941B9621192D4F0D00636EA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B9622192D4F0D00636EA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		941B9627192D4F0D00636EA5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B9628192D4F0D00636EA5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		941B962D192D4F0D00636EA5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B962E192D4F0D00636EA5 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		941B963E192D4F0D00636EA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941B963F192D4F0D00636EA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		941B9601192D2C6F00636EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		941B9602192D2C6F00636EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		941B9604192D2C6F00636EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
+				INFOPLIST_FILE = "MCTReachApp/MCTReachApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		941B9605192D2C6F00636EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
+				INFOPLIST_FILE = "MCTReachApp/MCTReachApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		941B9607192D2C6F00636EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCTReachApp.app/MCTReachApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MCTReachAppTests/MCTReachAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		941B9608192D2C6F00636EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCTReachApp.app/MCTReachApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
+				INFOPLIST_FILE = "MCTReachAppTests/MCTReachAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		941B9644192D4F0E00636EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachMacApp/MCTReachMacApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MCTReachMacApp/MCTReachMacApp-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		941B9645192D4F0E00636EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachMacApp/MCTReachMacApp-Prefix.pch";
+				INFOPLIST_FILE = "MCTReachMacApp/MCTReachMacApp-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		941B9647192D4F0E00636EA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCTReachApp.app/MCTReachApp";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachMacApp/MCTReachMacApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MCTReachMacAppTests/MCTReachMacAppTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		941B9648192D4F0E00636EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCTReachApp.app/MCTReachApp";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTReachMacApp/MCTReachMacApp-Prefix.pch";
+				INFOPLIST_FILE = "MCTReachMacAppTests/MCTReachMacAppTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		941B95CC192D2C6F00636EA5 /* Build configuration list for PBXProject "MCTReachApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941B9601192D2C6F00636EA5 /* Debug */,
+				941B9602192D2C6F00636EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		941B9603192D2C6F00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941B9604192D2C6F00636EA5 /* Debug */,
+				941B9605192D2C6F00636EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		941B9606192D2C6F00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941B9607192D2C6F00636EA5 /* Debug */,
+				941B9608192D2C6F00636EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		941B9643192D4F0E00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachMacApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941B9644192D4F0E00636EA5 /* Debug */,
+				941B9645192D4F0E00636EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		941B9646192D4F0E00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachMacAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941B9647192D4F0E00636EA5 /* Debug */,
+				941B9648192D4F0E00636EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 941B95C9192D2C6F00636EA5 /* Project object */;
+}
