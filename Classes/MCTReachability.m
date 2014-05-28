@@ -118,9 +118,15 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 
 #pragma mark -
 #pragma mark - Status
+- (BOOL)mct_getFlags:(SCNetworkReachabilityFlags *)flags {
+    if (SCNetworkReachabilityGetFlags(self.reach, flags)) {
+        return YES;
+    }
+    return NO;
+}
 - (MCTReachabilityNetworkStatus)status {
     SCNetworkReachabilityFlags flags;
-    if (SCNetworkReachabilityGetFlags(self.reach, &flags)) {
+    if ([self mct_getFlags:&flags]) {
         return [self mct_getReachabilityStatusFromFlags:flags];
     }
     
@@ -151,6 +157,13 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     return status;
 }
 
+- (NSString *)mct_debugFlagsString {
+    SCNetworkReachabilityFlags flags;
+    if ([self mct_getFlags:&flags]) {
+        return MCTReachabilityFlagsString(flags);
+    }
+    return @"Flags Failed";
+}
 
 - (BOOL)isReachableWiFi {
     return (self.status == MCTReachabilityNetworkReachableViaWiFi);
