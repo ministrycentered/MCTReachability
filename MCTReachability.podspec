@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "MCTReachability"
-  s.version          = "0.1.0"
+  s.version          = "1.0.0"
   s.summary          = "MCTReachability is a replacement for Reachability"
   s.homepage         = "https://github.com/ministrycentered/MCTReachability"
   s.license          = 'MIT'
