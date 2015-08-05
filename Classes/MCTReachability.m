@@ -192,6 +192,7 @@ NSString *const kMCTReachabilityStatus = @"status";
  *  C
  */
 static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info) {
+#pragma unused(target)
     if (info == NULL) {
         MCTReachabilityLog(@"Can't handle change, info was nil");
         return;
@@ -204,6 +205,8 @@ static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkRea
     [reach mct_reachChanged:flags];
 }
 static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const char *comment) {
+#pragma unused(flags)
+#pragma unused(comment)
     MCTReachabilityLog(@"Flags: %@ %s", MCTReachabilityFlagsString(flags), comment);
 }
 
