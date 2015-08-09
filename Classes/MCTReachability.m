@@ -16,7 +16,7 @@
 
 @interface MCTReachability ()
 
-@property (nonatomic) SCNetworkReachabilityRef reach;
+@property (nonatomic, readonly) SCNetworkReachabilityRef reach;
 @property (nonatomic, readwrite, getter = isRunning) BOOL running;
 
 - (void)mct_reachChanged:(SCNetworkReachabilityFlags)flags;
@@ -42,20 +42,24 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 + (instancetype)newReachabilityWithHostName:(NSString *)hostName {
     SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, [hostName UTF8String]);
     if (reach != NULL) {
-        MCTReachability *reachability = [[[self class] alloc] init];
-        reachability.reach = reach;
-        return reachability;
+        return [[self alloc] initWithReachability:reach];
     }
     return nil;
 }
 + (instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address {
     SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)address);
     if (reach != NULL) {
-        MCTReachability *reachability = [[[self class] alloc] init];
-        reachability.reach = reach;
-        return reachability;
+        return [[self alloc] initWithReachability:reach];
     }
     return nil;
+}
+
+- (instancetype)initWithReachability:(SCNetworkReachabilityRef)reachability {
+    self = [super init];
+    if (self) {
+        _reach = reachability;
+    }
+    return self;
 }
 
 
