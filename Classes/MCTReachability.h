@@ -18,6 +18,8 @@
 #   define MCTReachabilityDebugLog 0
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class MCTReachability;
 
 typedef NS_ENUM(NSInteger, MCTReachabilityNetworkStatus) {
@@ -39,7 +41,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  *
  *  @return A new reachability instance
  */
-+ (instancetype)newReachability;
++ (nullable instancetype)newReachability;
 /**
  *  A new reachability with the URL as the target
  *
@@ -47,7 +49,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  *
  *  @return A new reachability instance
  */
-+ (instancetype)newReachabilityWithURL:(NSURL *)URL;
++ (nullable instancetype)newReachabilityWithURL:(NSURL *)URL;
 /**
  *  A new reachability with the host name as the target
  *
@@ -55,7 +57,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  *
  *  @return A new reachability instance
  */
-+ (instancetype)newReachabilityWithHostName:(NSString *)hostName;
++ (nullable instancetype)newReachabilityWithHostName:(NSString *)hostName;
 /**
  *  Create a new reachability with the passed address
  *
@@ -63,7 +65,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  *
  *  @return A new reachability instance
  */
-+ (instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address;
++ (nullable instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address;
 
 /**
  *  Is the notifier running
@@ -109,16 +111,21 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  */
 - (BOOL)isReachable;
 
-
 /**
  *  The network is currently unreachable
  */
 - (BOOL)isUnReachable;
+
+#pragma mark -
+#pragma mark - Metadata
+@property (nonatomic, strong, readonly, nullable) NSString *host;
 
 @end
 
 OBJC_EXTERN NSString *const MCTReachabilityStatusChangedNotification;
 
 OBJC_EXTERN NSString *const kMCTReachabilityStatus;
+
+NS_ASSUME_NONNULL_END
 
 #endif

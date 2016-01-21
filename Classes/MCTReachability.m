@@ -42,21 +42,22 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 + (instancetype)newReachabilityWithHostName:(NSString *)hostName {
     SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, [hostName UTF8String]);
     if (reach != NULL) {
-        return [[self alloc] initWithReachability:reach];
+        return [[self alloc] initWithReachability:reach host:hostName];
     }
     return nil;
 }
 + (instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address {
     SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)address);
     if (reach != NULL) {
-        return [[self alloc] initWithReachability:reach];
+        return [[self alloc] initWithReachability:reach host:nil];
     }
     return nil;
 }
 
-- (instancetype)initWithReachability:(SCNetworkReachabilityRef)reachability {
+- (instancetype)initWithReachability:(SCNetworkReachabilityRef)reachability host:(NSString *)host {
     self = [super init];
     if (self) {
+        _host = [host copy];
         _reach = reachability;
     }
     return self;
