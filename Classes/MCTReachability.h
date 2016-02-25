@@ -10,6 +10,7 @@
 #define MCTReachability_h
 
 @import Foundation;
+@import CoreFoundation;
 @import SystemConfiguration;
 @import Darwin.POSIX.netinet.in;
 

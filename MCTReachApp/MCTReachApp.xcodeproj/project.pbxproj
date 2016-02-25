@@ -34,6 +34,7 @@
 		941B9640192D4F0D00636EA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 941B963E192D4F0D00636EA5 /* InfoPlist.strings */; };
 		941B9642192D4F0D00636EA5 /* MCTReachMacAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B9641192D4F0D00636EA5 /* MCTReachMacAppTests.m */; };
 		941B9649192D4F5100636EA5 /* MCTReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B9611192D2C9400636EA5 /* MCTReachability.m */; };
+		94A0947B1C7FA98D00658A40 /* MCTDNSResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A0947A1C7FA98D00658A40 /* MCTDNSResolver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		941B963D192D4F0D00636EA5 /* MCTReachMacAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTReachMacAppTests-Info.plist"; sourceTree = "<group>"; };
 		941B963F192D4F0D00636EA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		941B9641192D4F0D00636EA5 /* MCTReachMacAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTReachMacAppTests.m; sourceTree = "<group>"; };
+		94A094791C7FA98D00658A40 /* MCTDNSResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTDNSResolver.h; sourceTree = "<group>"; };
+		94A0947A1C7FA98D00658A40 /* MCTDNSResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTDNSResolver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 			children = (
 				941B9610192D2C9400636EA5 /* MCTReachability.h */,
 				941B9611192D2C9400636EA5 /* MCTReachability.m */,
+				94A094791C7FA98D00658A40 /* MCTDNSResolver.h */,
+				94A0947A1C7FA98D00658A40 /* MCTDNSResolver.m */,
 				941B960A192D2C8200636EA5 /* ios */,
 				941B960C192D2C8200636EA5 /* osx */,
 			);
@@ -374,7 +379,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MCT;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Ministry Centered Technology";
 				TargetAttributes = {
 					941B95F1192D2C6F00636EA5 = {
@@ -455,6 +460,7 @@
 				941B9612192D2C9400636EA5 /* MCTReachability.m in Sources */,
 				941B95EB192D2C6F00636EA5 /* MCTViewController.m in Sources */,
 				941B95E5192D2C6F00636EA5 /* MCTAppDelegate.m in Sources */,
+				94A0947B1C7FA98D00658A40 /* MCTDNSResolver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +583,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -637,6 +644,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachApp/MCTReachApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Wunused-function",
@@ -654,6 +662,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachApp/MCTReachApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = (
 					"-Wunused-function",
@@ -679,6 +688,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MCTReachAppTests/MCTReachAppTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -697,6 +707,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCTReachApp/MCTReachApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachAppTests/MCTReachAppTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -721,6 +732,7 @@
 				);
 				INFOPLIST_FILE = "MCTReachMacApp/MCTReachMacApp-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -742,6 +754,7 @@
 				GCC_PREFIX_HEADER = "MCTReachMacApp/MCTReachMacApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachMacApp/MCTReachMacApp-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -766,6 +779,7 @@
 				);
 				INFOPLIST_FILE = "MCTReachMacAppTests/MCTReachMacAppTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -788,6 +802,7 @@
 				GCC_PREFIX_HEADER = "MCTReachMacApp/MCTReachMacApp-Prefix.pch";
 				INFOPLIST_FILE = "MCTReachMacAppTests/MCTReachMacAppTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ministrycentered.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -814,6 +829,7 @@
 				941B9605192D2C6F00636EA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		941B9606192D2C6F00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachAppTests" */ = {
 			isa = XCConfigurationList;
@@ -822,6 +838,7 @@
 				941B9608192D2C6F00636EA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		941B9643192D4F0E00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachMacApp" */ = {
 			isa = XCConfigurationList;
@@ -830,6 +847,7 @@
 				941B9645192D4F0E00636EA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		941B9646192D4F0E00636EA5 /* Build configuration list for PBXNativeTarget "MCTReachMacAppTests" */ = {
 			isa = XCConfigurationList;
@@ -838,6 +856,7 @@
 				941B9648192D4F0E00636EA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

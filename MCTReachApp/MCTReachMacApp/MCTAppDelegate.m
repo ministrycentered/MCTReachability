@@ -9,6 +9,7 @@
 #import "MCTAppDelegate.h"
 
 #import "MCTReachability.h"
+#import "MCTDNSResolver.h"
 
 @interface MCTAppDelegate ()
 
