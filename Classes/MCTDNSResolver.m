@@ -55,8 +55,7 @@ static void MCTDNSResolverHostCallback(CFHostRef, CFHostInfoType, const CFStream
 
     CFStringRef cHostName = (__bridge CFStringRef)_hostName;
 
-    CFHostClientContext ctx = {0};
-    ctx.info = (__bridge void *)self;
+    CFHostClientContext ctx = {.info = (__bridge void *)self};
 
     CFHostRef host = CFHostCreateWithName(kCFAllocatorDefault, cHostName);
     if (host == NULL) {
