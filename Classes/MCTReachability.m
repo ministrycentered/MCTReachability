@@ -23,7 +23,7 @@
 
 @end
 
-static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info);
+static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info);
 static NSString *MCTReachabilityFlagsString(SCNetworkReachabilityFlags flags);
 static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const char *comment);
 
