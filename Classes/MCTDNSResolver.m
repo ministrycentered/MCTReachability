@@ -173,6 +173,8 @@ static void MCTDNSResolverHostCallback(CFHostRef, CFHostInfoType, const CFStream
 NSString *const MCTDNSResolverErrorDomain = @"MCTDNSResolverErrorDomain";
 
 static void MCTDNSResolverHostCallback(CFHostRef host, CFHostInfoType hostInfo, const CFStreamError *error, void *info) {
+#pragma unused(host)
+#pragma unused(hostInfo)
     MCTDNSResolver *resolver = (__bridge MCTDNSResolver *)info;
     if (![resolver isKindOfClass:[MCTDNSResolver class]]) {
         return;
