@@ -36,9 +36,11 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     addr.sin_family = AF_INET;
     return [self newReachabilityWithAddress:&addr];
 }
+
 + (instancetype)newReachabilityWithURL:(NSURL *)URL {
     return [self newReachabilityWithHostName:[URL host]];
 }
+
 + (instancetype)newReachabilityWithHostName:(NSString *)hostName {
     SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, [hostName UTF8String]);
     if (reach != NULL) {
@@ -46,6 +48,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     }
     return nil;
 }
+
 + (instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address {
     SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)address);
     if (reach != NULL) {
@@ -62,7 +65,6 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     }
     return self;
 }
-
 
 - (BOOL)startNotifier {
     if ([self isRunning]) {
@@ -81,6 +83,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     }
     return NO;
 }
+
 - (BOOL)stopNotifier {
     if (![self isRunning] && self.reach != NULL) {
         if (SCNetworkReachabilityUnscheduleFromRunLoop(self.reach, CFRunLoopGetMain(), kCFRunLoopDefaultMode)) {
@@ -114,6 +117,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     [self stopNotifier];
     [self mct_releaseReachRef];
 }
+
 - (void)mct_releaseReachRef {
     if (self.reach != NULL) {
         CFRelease(_reach);
@@ -129,6 +133,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     }
     return NO;
 }
+
 - (MCTReachabilityNetworkStatus)status {
     SCNetworkReachabilityFlags flags;
     if ([self mct_getFlags:&flags]) {
@@ -167,12 +172,13 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     if ([self mct_getFlags:&flags]) {
         return MCTReachabilityFlagsString(flags);
     }
-    return @"Flags Failed";
+    return @"xx xxxxxxx";
 }
 
 - (BOOL)isReachableWiFi {
     return (self.status == MCTReachabilityNetworkReachableViaWiFi);
 }
+
 - (BOOL)isReachableWWAN {
 #if	TARGET_OS_IPHONE
     return (self.status == MCTReachabilityNetworkReachableViaWWAN);
@@ -180,12 +186,17 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     return NO;
 #endif
 }
+
 - (BOOL)isReachable {
     return ([self isReachableWiFi] || [self isReachableWWAN]);
 }
 
 - (BOOL)isUnReachable {
     return (self.status == MCTReachabilityNetworkNotReachable);
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<Reachability: %@>",[self mct_debugFlagsString]];
 }
 
 @end
