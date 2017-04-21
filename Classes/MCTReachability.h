@@ -42,7 +42,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  *
  *  @return A new reachability instance
  */
-+ (nullable instancetype)newReachability;
++ (nullable instancetype)newReachability DEPRECATED_ATTRIBUTE;
 /**
  *  A new reachability with the URL as the target
  *
@@ -66,7 +66,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
  *
  *  @return A new reachability instance
  */
-+ (nullable instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address;
++ (nullable instancetype)newReachabilityWithAddress:(const struct sockaddr_in *)address  DEPRECATED_ATTRIBUTE;
 
 /**
  *  Is the notifier running
