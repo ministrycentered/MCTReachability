@@ -21,6 +21,8 @@
 
 - (void)mct_reachChanged:(SCNetworkReachabilityFlags)flags;
 
+@property (nonatomic, strong) dispatch_queue_t queue;
+
 @end
 
 static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void *info);
@@ -62,6 +64,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     if (self) {
         _host = [host copy];
         _reach = reachability;
+        _queue = dispatch_queue_create("com.pcococoa.reachability", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
@@ -75,9 +78,12 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
     SCNetworkReachabilityContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
     
     if (SCNetworkReachabilitySetCallback(self.reach, MCTReachabilityHandler, &context)) {
-        if (SCNetworkReachabilityScheduleWithRunLoop(self.reach, CFRunLoopGetMain(), kCFRunLoopDefaultMode)) {
+        if (SCNetworkReachabilitySetDispatchQueue(self.reach, self.queue)) {
             MCTReachabilityLog(@"Started notifier");
             self.running = YES;
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+            });
             return YES;
         }
     }
@@ -86,9 +92,12 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 
 - (BOOL)stopNotifier {
     if (![self isRunning] && self.reach != NULL) {
-        if (SCNetworkReachabilityUnscheduleFromRunLoop(self.reach, CFRunLoopGetMain(), kCFRunLoopDefaultMode)) {
+        if (SCNetworkReachabilitySetDispatchQueue(self.reach, NULL)) {
             MCTReachabilityLog(@"Stopped notifier");
             self.running = NO;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self mct_fireReachabilityChanged];
+            });
             return YES;
         }
         return NO;
@@ -98,27 +107,33 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 
 #pragma mark -
 #pragma mark - Changes
+- (void)mct_fireReachabilityChanged {
+    SCNetworkReachabilityFlags flags;
+    if ([self mct_getFlags:&flags]) {
+        [self mct_reachChanged:flags];
+    }
+}
+
 - (void)mct_reachChanged:(SCNetworkReachabilityFlags)flags {
     MCTReachabilityPrintFlags(flags, "Reachability Flags Changed");
     
     MCTReachabilityNetworkStatus status = [self mct_getReachabilityStatusFromFlags:flags];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:MCTReachabilityStatusChangedNotification object:self userInfo:@{kMCTReachabilityStatus: @(status)}];
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     if (self.changeHandler) {
         typeof(self) __weak welf = self;
         self.changeHandler(welf, status);
     }
+#pragma clang diagnostic pop
 }
 
 #pragma mark -
 #pragma mark - Memory
 - (void)dealloc {
     [self stopNotifier];
-    [self mct_releaseReachRef];
-}
-
-- (void)mct_releaseReachRef {
     if (self.reach != NULL) {
         CFRelease(_reach);
         _reach = NULL;
@@ -128,10 +143,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 #pragma mark -
 #pragma mark - Status
 - (BOOL)mct_getFlags:(SCNetworkReachabilityFlags *)flags {
-    if (SCNetworkReachabilityGetFlags(self.reach, flags)) {
-        return YES;
-    }
-    return NO;
+    return SCNetworkReachabilityGetFlags(self.reach, flags) == TRUE;
 }
 
 - (MCTReachabilityNetworkStatus)status {
@@ -209,6 +221,7 @@ NSString *const kMCTReachabilityStatus = @"status";
  */
 static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info) {
 #pragma unused(target)
+#pragma unused(flags)
     if (info == NULL) {
         MCTReachabilityLog(@"Can't handle change, info was nil");
         return;
@@ -218,7 +231,9 @@ static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkRea
         MCTReachabilityLog(@"Can't hand reach change: Info was %@",info);
         return;
     }
-    [reach mct_reachChanged:flags];
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [reach mct_fireReachabilityChanged];
+    });
 }
 static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const char *comment) {
 #pragma unused(flags)

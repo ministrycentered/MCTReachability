@@ -96,7 +96,7 @@ typedef void (^MCTReachabilityStatusChange)(MCTReachability *, MCTReachabilityNe
 /**
  *  An optional change handler when the network changes
  */
-@property (nonatomic, copy) MCTReachabilityStatusChange changeHandler;
+@property (nonatomic, copy) MCTReachabilityStatusChange changeHandler DEPRECATED_ATTRIBUTE;
 
 /**
  *  The network is currently reachable via WiFi
