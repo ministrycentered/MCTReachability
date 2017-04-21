@@ -6,6 +6,8 @@
  * Created by Skylar Schipper on 5/21/14
  */
 
+@import Darwin.POSIX.pthread;
+
 #import "MCTReachability.h"
 
 #if MCTReachabilityDebugLog && DEBUG
@@ -14,7 +16,9 @@
 #   define MCTReachabilityLog(msg, ...)
 #endif
 
-@interface MCTReachability ()
+@interface MCTReachability () {
+    pthread_mutex_t _mutex;
+}
 
 @property (nonatomic, readonly) SCNetworkReachabilityRef reach;
 @property (nonatomic, readwrite, getter = isRunning) BOOL running;
@@ -65,13 +69,21 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
         _host = [host copy];
         _reach = reachability;
         _queue = dispatch_queue_create("com.pcococoa.reachability", DISPATCH_QUEUE_SERIAL);
+        int status = pthread_mutex_init(&_mutex, NULL);
+        NSAssert(status == 0, @"Failed to create mutex");
+        #pragma unused(status)
     }
     return self;
 }
 
 - (BOOL)startNotifier {
+    pthread_mutex_lock(&_mutex);
     if ([self isRunning]) {
         MCTReachabilityLog(@"Already running notifier");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self mct_fireReachabilityChanged];
+        });
+        pthread_mutex_unlock(&_mutex);
         return YES;
     }
     
@@ -82,26 +94,30 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
             MCTReachabilityLog(@"Started notifier");
             self.running = YES;
             dispatch_async(dispatch_get_main_queue(), ^{
-
+                [self mct_fireReachabilityChanged];
             });
+            pthread_mutex_unlock(&_mutex);
             return YES;
         }
     }
+
+    pthread_mutex_unlock(&_mutex);
     return NO;
 }
 
 - (BOOL)stopNotifier {
+    pthread_mutex_lock(&_mutex);
     if (![self isRunning] && self.reach != NULL) {
         if (SCNetworkReachabilitySetDispatchQueue(self.reach, NULL)) {
             MCTReachabilityLog(@"Stopped notifier");
             self.running = NO;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self mct_fireReachabilityChanged];
-            });
+            pthread_mutex_unlock(&_mutex);
             return YES;
         }
+        pthread_mutex_unlock(&_mutex);
         return NO;
     }
+    pthread_mutex_unlock(&_mutex);
     return YES;
 }
 
