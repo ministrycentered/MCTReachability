@@ -18,6 +18,7 @@
 
 @interface MCTReachability () {
     pthread_mutex_t _mutex;
+    BOOL _restart;
 }
 
 @property (nonatomic, readonly) SCNetworkReachabilityRef reach;
@@ -72,8 +73,29 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
         int status = pthread_mutex_init(&_mutex, NULL);
         NSAssert(status == 0, @"Failed to create mutex");
         #pragma unused(status)
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
     return self;
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notif {
+#pragma unused(notif)
+    if ([self isRunning]) {
+        [self stopNotifier];
+        _restart = YES;
+    } else {
+        _restart = NO;
+    }
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notif {
+#pragma unused(notif)
+    if (_restart) {
+        [self startNotifier];
+        _restart = NO;
+    }
 }
 
 - (BOOL)startNotifier {
@@ -107,7 +129,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 
 - (BOOL)stopNotifier {
     pthread_mutex_lock(&_mutex);
-    if (![self isRunning] && self.reach != NULL) {
+    if ([self isRunning] && self.reach != NULL) {
         if (SCNetworkReachabilitySetDispatchQueue(self.reach, NULL)) {
             MCTReachabilityLog(@"Stopped notifier");
             self.running = NO;
@@ -150,6 +172,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
 #pragma mark - Memory
 - (void)dealloc {
     [self stopNotifier];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (self.reach != NULL) {
         CFRelease(_reach);
         _reach = NULL;
