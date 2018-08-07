@@ -75,7 +75,7 @@ static void MCTReachabilityPrintFlags(SCNetworkReachabilityFlags flags, const ch
         #pragma unused(status)
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
     return self;
 }
@@ -270,7 +270,7 @@ static void MCTReachabilityHandler(SCNetworkReachabilityRef target, SCNetworkRea
         MCTReachabilityLog(@"Can't hand reach change: Info was %@",info);
         return;
     }
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [reach mct_fireReachabilityChanged];
     });
 }
