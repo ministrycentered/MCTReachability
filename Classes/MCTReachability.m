@@ -296,6 +296,7 @@ static NSString *MCTReachabilityFlagsString(SCNetworkReachabilityFlags flags) {
     char dema = (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-';
     char loca = (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-';
     char dire = (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-';
-    return [NSString stringWithFormat:@"%c%c %c%c%c%c%c%c%c",wwan,tran,reac,requ,traf,inte,dema,loca,dire];
+    NSString *status = (flags & kSCNetworkReachabilityFlagsReachable)  ? @"Connected" : @"Not Connected";
+    return [NSString stringWithFormat:@"%c%c %c%c%c%c%c%c%c (%@)",wwan,tran,reac,requ,traf,inte,dema,loca,dire, status];
 }
 #pragma clang diagnostic pop
