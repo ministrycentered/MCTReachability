@@ -12,11 +12,11 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Skylar Schipper" => "ss@schipp.co" }
   s.source           = { :git => "https://github.com/ministrycentered/MCTReachability.git", :tag => s.version.to_s }
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.9'
   s.requires_arc = true
-  s.source_files = 'Classes'
-  s.ios.exclude_files = 'Classes/osx'
-  s.osx.exclude_files = 'Classes/ios'
+  s.source_files = "MCTReachability/*.{h,m}"
+  s.ios.exclude_files = 'MCTReachability/osx'
+  s.osx.exclude_files = 'MCTReachability/ios'
   s.frameworks = 'Foundation', 'SystemConfiguration'
 end
